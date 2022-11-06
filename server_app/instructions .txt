@@ -1,0 +1,10 @@
+
+// to start project 
+npm start
+//===========================
+npm init -y
+npm i --save-sev typescript tslint
+tsc --init
+
+npm i --save-dev nodemon
+npm i --save-dev concurrently

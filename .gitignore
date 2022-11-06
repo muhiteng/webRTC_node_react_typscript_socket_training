@@ -1,0 +1,4 @@
+server_app/node_modules
+server_app/dist
+*.logs
+*.env
