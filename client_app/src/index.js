@@ -4,13 +4,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RoomProvider } from "./context/RoomContext";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Room } from "./pages/Room";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RoomProvider>
-      <App />
-    </RoomProvider>
+    <BrowserRouter>
+      <RoomProvider>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/room/:id" element={<Room />}></Route>
+        </Routes>
+      </RoomProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
