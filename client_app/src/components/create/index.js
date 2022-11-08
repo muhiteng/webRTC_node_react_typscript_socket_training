@@ -2,16 +2,9 @@ import { useContext } from "react";
 import { RoomContext } from "../../context/RoomContext";
 import { v4 as uuidV4 } from "uuid";
 export const Join = () => {
-  const { ws } = useContext(RoomContext);
+  const { ws, me } = useContext(RoomContext);
   const createRoom = () => {
-    //const roomID = uuidV4();
-
-    ws.emit("create-room");
-  };
-  const joinRoom = () => {
-    // const roomID = uuidV4();
-
-    ws.emit("join-room");
+    ws.emit("create-room", { peerId: me._id });
   };
   return (
     <button
